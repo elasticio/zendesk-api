@@ -1,0 +1,70 @@
+{
+    "apiVersion": "v2",
+    "swaggerVersion": "1.1",
+    "basePath": "https://{{subdomain}}.zendesk.com/api/v2",
+    "resourcePath": "/tickets.json",
+    "apis": [
+        {
+            "path": "/tickets.json",
+            "description": "Ticket resources",
+            "operations": [
+                {
+                    "httpMethod": "POST",
+                    "summary": "Create Ticket",
+                    "responseClass": "TicketResponse",
+                    "nickname": "createTicket",
+                    "parameters": [
+                        {
+                            "name": "ticket",
+                            "description": "Ticket",
+                            "paramType": "body",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "Ticket"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+        "Ticket": {
+            "id": "Ticket",
+            "type": "object",
+            "properties": {
+                "ticket": {
+                    "type": "object",
+                    "properties": {
+                        "subject": {
+                            "title": "Subject",
+                            "type": "string",
+                            "required":true
+                        },
+                        "description": {
+                            "title": "Description",
+                            "type": "string",
+                            "required":true
+                        },
+                        "priority" : {
+                            "title": "Priority",
+                            "type": "string",
+                            "required":false,
+                            "enum" : ["urgent", "high", "normal", "low"]
+                        }
+                    }
+                }
+            }
+        },
+        "TicketResponse": {
+            "id": "TicketResponse",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "number",
+                    "required":true
+                }
+            }
+        }
+
+    }
+}

@@ -1,0 +1,46 @@
+{
+    "apiVersion": "v2",
+    "description": "Zendesk - a customer support platform",
+    "swaggerVersion": "1.1",
+    "basePath": "https://{{subdomain}}.zendesk.com/api/v2",
+    "apis": [
+        {
+            "path": "/tickets.json",
+            "description": "Ticket resources"
+        }
+    ],
+    "authentication": {
+        "type": "oauth2",
+        "parameters": [
+            {
+                "name": "subdomain",
+                "description": "Subdomain",
+                "paramType": "string",
+                "required": true,
+                "dataType": "string",
+                "prefix":"https://",
+                "suffix":".zendesk.com"
+            },
+            {
+                "name": "oauth",
+                "description": "Authentication",
+                "paramType": "custom",
+                "required": true,
+                "dataType": "string",
+                "viewClass": "OAuthFieldView",
+                "require":[
+                    "subdomain"
+                ]
+            }
+        ],
+        "oauth2":{
+            "client_id":"{{ZENDESK_KEY}}",
+            "client_secret":"{{ZENDESK_SECRET}}",
+            "auth_uri":"https://{{subdomain}}.zendesk.com/oauth/authorizations/new",
+            "token_uri":"https://{{subdomain}}.zendesk.com/oauth/tokens",
+            "scopes": [
+                "read", "write"
+            ]
+        }
+    }
+}
