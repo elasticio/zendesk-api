@@ -1,4 +1,4 @@
-# Paymill API Description
+# Zendesk API Description
 
 This project contains a Swagger API for [Zendesk](http://zendesk.com) - a customer support platform.
 Before going into the description two words about **Swagger**:
