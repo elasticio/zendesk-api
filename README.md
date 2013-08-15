@@ -24,7 +24,7 @@ from it in the long-term e.g. from Swagger Code Generation.
 
 ## Contract
 
-Goal of this desription is to provide an easy way to integrate Paymill API into elastic.io platform.
+Goal of this desription is to provide an easy way to integrate Zendesk API into elastic.io platform.
 For that following should be stored in this Git repository: 
 * It should have an *index* document called ```/api-docs.json```, typical Swagger structure that declares an entry point and references individual *resource* description files.
 * It should have an icon called ```/logo.png```. This logo should be 64x64 pixels large and have a transparent background.
